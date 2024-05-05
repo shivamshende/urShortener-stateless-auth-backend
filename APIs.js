@@ -86,14 +86,14 @@ router.post('/api/shortenUrl', async (req, res) => {
 
     try {
         await dataOperations.Url.create({ originalUrl, shortenedUrl, userId });
-        res.json({ shortUrl: `http://localhost:4000/${shortenedUrl}` });
+        res.json({ shortUrl: `http://localhost:4000/api/${shortenedUrl}` });
     } catch (err) {
         console.error('Error shortening URL:', err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
-router.get('/:shortenedUrl', async (req, res) => {
+router.get('/api/:shortenedUrl', async (req, res) => {
     const { shortenedUrl } = req.params;
 
     try {
@@ -143,14 +143,14 @@ router.post('/api/demoShortenUrl', async (req, res) => {
 
     try {
         await dataOperations.DemoUrl.create({ demo_originalUrl, demo_shortUrl });
-        res.json({ shortUrl: `http://localhost:4000/short/${demo_shortUrl}` });
+        res.json({ shortUrl: `http://localhost:4000/api/short/${demo_shortUrl}` });
     } catch (err) {
         console.error('Error inserting demo URL:', err);
         res.status(500).json({ error: 'Failed to insert URL into database' });
     }
 });
 
-router.get('/short/:demoShortenedUrl', async (req, res) => {
+router.get('/api/short/:demoShortenedUrl', async (req, res) => {
     const { demoShortenedUrl } = req.params;
 
     try {
