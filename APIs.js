@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const dataOperations = require('../dbmodel');
+const dataOperations = require('./dbmodel');
 
 const router = express.Router();
 const secret = process.env.JWT_SECRET;

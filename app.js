@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const apiRoutes = require('./API/APIs');
+const apiRoutes = require('./APIs');
 const cors = require('cors');
 const connectDB = require('./dbConnection')
 
