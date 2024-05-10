@@ -8,7 +8,11 @@ const dataOperations = require('./dbmodel');
 const router = express.Router();
 const secret = process.env.JWT_SECRET;
 
-router.post('/api/register', async (req, res) => {
+router.get('/', (req, res) => {
+    return res.send('Welcome, server running...')
+})
+
+router.post('/register', async (req, res) => {
     const { username, password, role } = req.body;
 
     try {
@@ -24,7 +28,7 @@ router.post('/api/register', async (req, res) => {
     }
 });
 
-router.post('/api/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     try {
@@ -45,7 +49,7 @@ router.post('/api/login', async (req, res) => {
 
 
 
-router.get('/api/isAuthenticated', async (req, res) => {
+router.get('/isAuthenticated', async (req, res) => {
     const token = req.cookies.token;
 
     if (!token) {
@@ -65,7 +69,7 @@ router.get('/api/isAuthenticated', async (req, res) => {
     }
 });
 
-router.get('/api/usersData', async (req, res) => {
+router.get('/usersData', async (req, res) => {
     try {
         const users = await dataOperations.User.find({});
         res.json(users);
@@ -75,7 +79,7 @@ router.get('/api/usersData', async (req, res) => {
     }
 });
 
-router.post('/api/logout', (req, res) => {
+router.post('/logout', (req, res) => {
     res.clearCookie('token').json({ message: 'Logged out successfully' });
 });
 
@@ -86,14 +90,14 @@ router.post('/api/shortenUrl', async (req, res) => {
 
     try {
         await dataOperations.Url.create({ originalUrl, shortenedUrl, userId });
-        res.json({ shortUrl: `http://localhost:4000/api/${shortenedUrl}` });
+        res.json({ shortUrl: `http://localhost:4000/${shortenedUrl}` });
     } catch (err) {
         console.error('Error shortening URL:', err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
-router.get('/api/:shortenedUrl', async (req, res) => {
+router.get('/:shortenedUrl', async (req, res) => {
     const { shortenedUrl } = req.params;
 
     try {
@@ -117,7 +121,7 @@ router.get('/api/:shortenedUrl', async (req, res) => {
 
 
 
-router.get('/api/userUrlsData', async (req, res) => {
+router.get('/userUrlsData', async (req, res) => {
     const token = req.cookies.token;
 
     if (!token) {
@@ -136,21 +140,21 @@ router.get('/api/userUrlsData', async (req, res) => {
     }
 });
 
-router.post('/api/demoShortenUrl', async (req, res) => {
+router.post('/demoShortenUrl', async (req, res) => {
     const { demo_originalUrl } = req.body;
 
     const demo_shortUrl = generateShortUrl(demo_originalUrl);
 
     try {
         await dataOperations.DemoUrl.create({ demo_originalUrl, demo_shortUrl });
-        res.json({ shortUrl: `http://localhost:4000/api/short/${demo_shortUrl}` });
+        res.json({ shortUrl: `http://localhost:4000/${demo_shortUrl}` });
     } catch (err) {
         console.error('Error inserting demo URL:', err);
         res.status(500).json({ error: 'Failed to insert URL into database' });
     }
 });
 
-router.get('/api/short/:demoShortenedUrl', async (req, res) => {
+router.get('/:demoShortenedUrl', async (req, res) => {
     const { demoShortenedUrl } = req.params;
 
     try {
