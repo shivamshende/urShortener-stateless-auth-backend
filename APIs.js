@@ -83,7 +83,7 @@ router.post('/logout', (req, res) => {
     res.clearCookie('token').json({ message: 'Logged out successfully' });
 });
 
-router.post('/api/shortenUrl', async (req, res) => {
+router.post('/shortenUrl', async (req, res) => {
     const { originalUrl, userId } = req.body;
 
     const shortenedUrl = generateShortUrl(originalUrl);
