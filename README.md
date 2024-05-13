@@ -8,10 +8,14 @@ This project is a backend API built using Node.js and Express to provide URL sho
 
 This backend project aims to provide a robust and secure API for a URL shortening service with stateless authentication and user data management. Whether you are a beginner or an experienced developer, this repository serves as an educational resource for understanding backend development with Node.js and Express.
 
-Explore the following key features covered in this project:
- **User Registration and Authentication:** Learn how to register new users and authenticate existing users using JWT tokens for stateless authentication.
+Explore the following key features covered in this project:     
+   
+ **User Registration and Authentication:** Learn how to register new users and authenticate existing users using JWT tokens for stateless authentication.               
+ 
  **URL Shortening and Redirection:** Implement URL shortening functionality to generate shortened URLs and redirect users to the original URLs.
+ 
  **User Data Management:** Manage URL history and user data, including usernames, passwords (hashed for security), and user roles, in MongoDB Atlas database.
+ 
  **URL Shorten and Visit History:** Track and manage Original and Shorten URL history and visit history of each user.
 
  ## Project Access
