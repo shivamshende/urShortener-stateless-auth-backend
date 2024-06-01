@@ -1,5 +1,4 @@
-## Note
-
+## Note -
 Our deployed APIs vercel have an issue where only GET requests work in the browser, but not other POST requests. Also all APIs, including GET requests, are not functioning correctly in API testing platforms. You all also can be a part and work or give me suggestions to resolve this issue.
 
 # About the Project
