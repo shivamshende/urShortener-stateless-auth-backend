@@ -1,10 +1,14 @@
+## Note
+
+Our deployed APIs vercel have an issue where only GET requests work in the browser, but not other POST requests. Also all APIs, including GET requests, are not functioning correctly in API testing platforms. You all also can be a part and work or give me suggestions to resolve this issue.
+
 # About the Project
 
 This project is a backend API built using Node.js and Express to provide URL shortening functionality and user authentication(stateless) feature. It uses MongoDB Atlas as the database for storing user information, URL history data.
 
 ## Description
 
-**URL shortener with user data and authentication**
+**URL shortener with user activity history and authentication**
 
 This backend project aims to provide a robust and secure API for a URL shortening service with stateless authentication and user data management. Whether you are a beginner or an experienced developer, this repository serves as an educational resource for understanding backend development with Node.js and Express.
 
@@ -20,7 +24,7 @@ Explore the following key features covered in this project:
 
  ## Project Access
 
-[Click here to view the API](https://ur-shortener-stateless-auth-backend-23q70rmo6.vercel.app/)
+[Click here to visit an API](https://ur-shortener-stateless-auth-backend-23q70rmo6.vercel.app/)
 
 # Installation
 
