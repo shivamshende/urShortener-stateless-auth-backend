@@ -4,7 +4,8 @@ Our deployed APIs vercel have an issue where only GET requests work in the brows
 # About the Project
 
 This project is a backend API built using Node.js and Express to provide URL shortening functionality and user authentication(stateless) feature. It uses MongoDB Atlas as the database for storing user information, URL history data.
-watch demo video - https://youtu.be/vsd2YASdqzQ?si=ttXAKUOrkgCxsl7_
+
+Our live apis not working for some reasons. Watch demo video - https://youtu.be/vsd2YASdqzQ?si=ttXAKUOrkgCxsl7_
 
 ## Description
 
