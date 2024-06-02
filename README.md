@@ -29,6 +29,8 @@ Explore the following key features covered in this project:
 
 [Demo](https://youtu.be/vsd2YASdqzQ?si=ttXAKUOrkgCxsl7_)
 
+However, you can still run the project locally on your machine.
+
 # Installation
 
 1. Clone the repository:
